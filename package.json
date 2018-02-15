@@ -1,0 +1,14 @@
+{
+  "name": "gfandbf",
+  "version": "1.0.0",
+  "description": "bot for gf and bf",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madhav Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.9"
+  }
+}
