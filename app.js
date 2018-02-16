@@ -1,7 +1,7 @@
 BFandGFbot();
 
 function BFandGFbot() {
-    
+    var cron = require('cron');
     var Twit = require('twit');
     var T = new Twit({
         consumer_key: 'BIEEqyHkSr3qxK11aLw7rgddB',
@@ -11,13 +11,24 @@ function BFandGFbot() {
     });
 
     var date = new Date();
-    var year = date.getFullYear();
 
-    var message = "GF and BF have been dating for " + (year - 2016) + " years.";
+    var job = new cron.CronJob({
+        cronTime: '00 00 6 19 Feb *',
+        onTick: function () {
+            var year = date.getFullYear();
 
-    T.post('statuses/update', { status: message }, function (err, data, response) {
-        console.log(data);
+            var message = "GF and BF have been dating for " + (year - 2016) + " years.";
+
+            T.post('statuses/update', { status: message }, function (err, data, response) {
+                console.log(data);
+            });
+        },
+        start: false,
+        timeZone: "America/New_York"
+
     });
+
+
 
 
 }
