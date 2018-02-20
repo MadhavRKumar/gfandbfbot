@@ -27,7 +27,7 @@ function BFandGFbot() {
         timeZone: "America/New_York"
 
     });
-
+    job.start();
 
 
 
